@@ -8,10 +8,6 @@ import lombok.Data;
 
 import java.util.Date;
 
-/**
- * Represents a Rendu (Submission) entity in the system.
- * This entity is mapped to a database table.
- */
 @Entity
 @Data
 public class Rendu {

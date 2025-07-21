@@ -5,10 +5,6 @@ import com.enaa.validation.enums.Statut;
 import jakarta.persistence.*;
 import lombok.Data;
 
-/**
- * Represents a Validation entity in the system.
- * This entity is mapped to a database table.
- */
 @Entity
 @Data
 public class Validation {

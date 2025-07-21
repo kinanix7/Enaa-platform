@@ -5,9 +5,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * DTO for representing a Brief with its associated competences.
- */
 @Data
 public class BriefResponseDTO {
     private Long id;

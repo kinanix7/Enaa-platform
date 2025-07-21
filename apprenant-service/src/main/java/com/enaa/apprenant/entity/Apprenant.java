@@ -6,10 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-/**
- * Represents an Apprenant (Learner) entity in the system.
- * This entity is mapped to a database table.
- */
 @Entity
 @Data
 public class Apprenant {

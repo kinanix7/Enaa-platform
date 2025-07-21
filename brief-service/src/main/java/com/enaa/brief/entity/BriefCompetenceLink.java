@@ -6,10 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-/**
- * Represents a link between a Brief and a Competence.
- * This entity is mapped to a database table.
- */
 @Entity
 @Data
 public class BriefCompetenceLink {

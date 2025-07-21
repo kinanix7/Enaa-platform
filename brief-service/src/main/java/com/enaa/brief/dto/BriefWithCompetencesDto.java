@@ -6,10 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-/**
- * DTO for representing a Brief with its associated competences.
- * This DTO is used for more detailed brief information.
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

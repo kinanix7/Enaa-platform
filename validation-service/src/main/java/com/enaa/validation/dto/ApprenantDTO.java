@@ -2,9 +2,6 @@ package com.enaa.validation.dto;
 
 import lombok.Data;
 
-/**
- * DTO for representing an Apprenant.
- */
 @Data
 public class ApprenantDTO {
     private Long id;

@@ -19,10 +19,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Service class for managing {@link Validation} entities.
- * Provides business logic for Validation-related operations.
- */
 @Service
 @RequiredArgsConstructor
 public class ValidationService {
@@ -30,21 +26,10 @@ public class ValidationService {
     private final ValidationRepository validationRepository;
     private final RestTemplate restTemplate;
 
-    /**
-     * Retrieves all Validation entities.
-     * @return A list of all Validation entities.
-     */
     public List<Validation> getAllValidations() {
         return validationRepository.findAll();
     }
 
-    /**
-     * Creates a new Validation entity.
-     * It validates the existence of related Apprenant, Brief, and Competence entities.
-     * @param validation The Validation entity to create.
-     * @return The created Validation entity.
-     * @throws RuntimeException if any related entity is not found.
-     */
     public Validation createValidation(Validation validation) {
         try {
             restTemplate.getForObject("http://localhost:8083/api/apprenants/" + validation.getApprenantId(), ApprenantDTO.class);
@@ -56,26 +41,12 @@ public class ValidationService {
         return validationRepository.save(validation);
     }
 
-    /**
-     * Updates an existing Validation entity.
-     * @param id The ID of the Validation to update.
-     * @param validationDetails The updated Validation details.
-     * @return The updated Validation entity.
-     * @throws RuntimeException if the Validation is not found.
-     */
     public Validation updateValidation(Long id, Validation validationDetails) {
         Validation validation = validationRepository.findById(id).orElseThrow(() -> new RuntimeException("Validation not found"));
         validation.setStatut(validationDetails.getStatut());
         return validationRepository.save(validation);
     }
 
-    /**
-     * Retrieves dashboard information for a specific Apprenant.
-     * Fetches Apprenant details, and related Validations, Briefs, and Competences.
-     * @param apprenantId The ID of the Apprenant.
-     * @return A {@link DashboardDTO} containing the dashboard information.
-     * @throws RuntimeException if the Apprenant is not found.
-     */
     public DashboardDTO getDashboard(Long apprenantId) {
         ApprenantDTO apprenant = restTemplate.getForObject("http://localhost:8083/api/apprenants/" + apprenantId, ApprenantDTO.class);
         if (apprenant == null) {

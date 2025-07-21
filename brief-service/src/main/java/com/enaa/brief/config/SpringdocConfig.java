@@ -5,17 +5,9 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Configuration class for Springdoc OpenAPI.
- * Provides custom OpenAPI documentation for the Brief Service.
- */
 @Configuration
 public class SpringdocConfig {
 
-    /**
-     * Configures and returns a custom OpenAPI bean.
-     * @return The custom OpenAPI instance.
-     */
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()

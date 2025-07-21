@@ -15,10 +15,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/**
- * Service class for managing {@link Brief} entities.
- * Provides business logic for Brief-related operations.
- */
 @Service
 @RequiredArgsConstructor
 public class BriefService {
@@ -27,11 +23,6 @@ public class BriefService {
     private final BriefCompetenceLinkRepository briefCompetenceLinkRepository;
     private final RestTemplate restTemplate;
 
-    /**
-     * Retrieves all Brief entities.
-     * @param ids Optional list of Brief IDs to filter by.
-     * @return A list of Brief entities.
-     */
     public List<Brief> getAllBriefs(List<Long> ids) {
         if (ids != null && !ids.isEmpty()) {
             return briefRepository.findAllById(ids);
@@ -39,21 +30,10 @@ public class BriefService {
         return briefRepository.findAll();
     }
 
-    /**
-     * Creates a new Brief entity.
-     * @param brief The Brief entity to create.
-     * @return The created Brief entity.
-     */
     public Brief createBrief(Brief brief) {
         return briefRepository.save(brief);
     }
 
-    /**
-     * Retrieves a Brief entity by its ID and constructs a {@link BriefResponseDTO}.
-     * @param id The ID of the Brief to retrieve.
-     * @return A {@link BriefResponseDTO} containing the Brief details and associated competences.
-     * @throws RuntimeException if the Brief is not found.
-     */
     public BriefResponseDTO getBriefById(Long id) {
         Brief brief = briefRepository.findById(id).orElseThrow(() -> new RuntimeException("Brief not found"));
         List<BriefCompetenceLink> links = briefCompetenceLinkRepository.findByBriefId(id);
@@ -74,13 +54,6 @@ public class BriefService {
         return responseDTO;
     }
 
-    /**
-     * Updates an existing Brief entity.
-     * @param id The ID of the Brief to update.
-     * @param briefDetails The updated Brief details.
-     * @return The updated Brief entity.
-     * @throws RuntimeException if the Brief is not found.
-     */
     public Brief updateBrief(Long id, Brief briefDetails) {
         Brief brief = briefRepository.findById(id).orElseThrow(() -> new RuntimeException("Brief not found"));
         brief.setTitre(briefDetails.getTitre());
@@ -88,20 +61,10 @@ public class BriefService {
         return briefRepository.save(brief);
     }
 
-    /**
-     * Deletes a Brief entity by its ID.
-     * @param id The ID of the Brief to delete.
-     */
     public void deleteBrief(Long id) {
         briefRepository.deleteById(id);
     }
 
-    /**
-     * Adds a competence to a brief by creating a link between them.
-     * @param briefId The ID of the Brief.
-     * @param competenceId The ID of the Competence.
-     * @return The created {@link BriefCompetenceLink} entity.
-     */
     public BriefCompetenceLink addCompetenceToBrief(Long briefId, Long competenceId) {
         BriefCompetenceLink link = new BriefCompetenceLink();
         link.setBriefId(briefId);
@@ -109,12 +72,6 @@ public class BriefService {
         return briefCompetenceLinkRepository.save(link);
     }
 
-    /**
-     * Removes a competence from a brief.
-     * @param briefId The ID of the Brief.
-     * @param competenceId The ID of the Competence.
-     * @throws RuntimeException if the link is not found.
-     */
     public void removeCompetenceFromBrief(Long briefId, Long competenceId) {
         BriefCompetenceLink link = briefCompetenceLinkRepository.findByBriefIdAndCompetenceId(briefId, competenceId)
                 .orElseThrow(() -> new RuntimeException("Link not found"));

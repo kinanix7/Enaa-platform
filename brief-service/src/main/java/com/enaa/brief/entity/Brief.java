@@ -6,10 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-/**
- * Represents a Brief entity in the system.
- * This entity is mapped to a database table.
- */
 @Entity
 @Data
 public class Brief {

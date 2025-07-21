@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * DTO for representing a SousCompetence (Sub-competence).
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
