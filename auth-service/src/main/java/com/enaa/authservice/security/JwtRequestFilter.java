@@ -19,11 +19,11 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     private final AuthService authService;
-    private final JwtUtil jwtUtil;
+    private final JwtUtils jwtUtils;
 
-    public JwtRequestFilter(AuthService authService, JwtUtil jwtUtil) {
+    public JwtRequestFilter(AuthService authService, JwtUtils jwtUtils) {
         this.authService = authService;
-        this.jwtUtil = jwtUtil;
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = requestTokenHeader.substring(7);
             try {
-                username = jwtUtil.extractUsername(jwtToken);
+                username = jwtUtils.extractUsername(jwtToken);
             } catch (IllegalArgumentException e) {
                 System.out.println("Unable to get JWT Token");
             } catch (ExpiredJwtException e) {
@@ -52,7 +52,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
             UserDetails userDetails = this.authService.loadUserByUsername(username);
 
-            if (jwtUtil.validateToken(jwtToken, userDetails)) {
+            if (jwtUtils.validateToken(jwtToken, userDetails)) {
 
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());

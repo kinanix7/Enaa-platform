@@ -1,0 +1,3 @@
+com\enaa\apigateway\filter\AuthenticationFilter$Config.class
+com\enaa\apigateway\filter\AuthenticationFilter.class
+com\enaa\apigateway\ApiGatewayApplication.class

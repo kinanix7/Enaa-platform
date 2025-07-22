@@ -1,0 +1,10 @@
+com\enaa\competence\entity\SousCompetence.class
+com\enaa\competence\service\SousCompetenceService.class
+com\enaa\competence\repository\CompetenceRepository.class
+com\enaa\competence\config\SpringdocConfig.class
+com\enaa\competence\entity\Competence.class
+com\enaa\competence\repository\SousCompetenceRepository.class
+com\enaa\competence\controller\CompetenceController.class
+com\enaa\competence\controller\SousCompetenceController.class
+com\enaa\competence\CompetenceServiceApplication.class
+com\enaa\competence\service\CompetenceService.class

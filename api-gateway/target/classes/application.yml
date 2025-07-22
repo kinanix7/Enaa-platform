@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: api-gateway
+jwt:
+  secret: aVeryLongAndSecureSecretKeyForJWTAuthentication
+  expiration: 86400000
   cloud:
     gateway:
       routes:
@@ -27,6 +30,15 @@ spring:
           uri: lb://validation-service
           predicates:
             - Path=/validations/**
+
+          filters :
+           - AuthenticationFilter
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
 
 eureka:
   client:

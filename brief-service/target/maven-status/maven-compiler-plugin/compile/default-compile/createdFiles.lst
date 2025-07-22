@@ -1,0 +1,15 @@
+com\enaa\brief\config\WebClientConfig.class
+com\enaa\brief\entity\BriefCompetenceLink.class
+com\enaa\brief\BriefServiceApplication.class
+com\enaa\brief\repository\BriefRepository.class
+com\enaa\brief\dto\SousCompetenceDto.class
+com\enaa\brief\client\CompetenceServiceClient.class
+com\enaa\brief\service\BriefService.class
+com\enaa\brief\controller\BriefController.class
+com\enaa\brief\config\RestTemplateConfig.class
+com\enaa\brief\dto\BriefResponseDTO.class
+com\enaa\brief\dto\BriefWithCompetencesDto.class
+com\enaa\brief\entity\Brief.class
+com\enaa\brief\repository\BriefCompetenceLinkRepository.class
+com\enaa\brief\config\SpringdocConfig.class
+com\enaa\brief\dto\CompetenceDTO.class

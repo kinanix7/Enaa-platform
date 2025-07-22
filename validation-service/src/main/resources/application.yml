@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/validation_db
     username: root
-    password: password
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -21,7 +21,7 @@ spring:
 # Service URLs
 competence:
   service:
-    url: http://localhost:8081
+    url: http://localhost:8085
 
 brief:
   service:
@@ -42,6 +42,12 @@ logging:
     com.enaa.validation: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
 
 eureka:
   client:

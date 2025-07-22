@@ -1,0 +1,15 @@
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\config\WebClientConfig.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\controller\BriefController.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\config\SpringdocConfig.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\repository\BriefRepository.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\client\CompetenceServiceClient.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\dto\BriefWithCompetencesDto.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\dto\SousCompetenceDto.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\entity\BriefCompetenceLink.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\dto\BriefResponseDTO.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\dto\CompetenceDTO.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\entity\Brief.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\repository\BriefCompetenceLinkRepository.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\service\BriefService.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\BriefServiceApplication.java
+C:\Users\kx72\enaa-platform\brief-service\src\main\java\com\enaa\brief\config\RestTemplateConfig.java
