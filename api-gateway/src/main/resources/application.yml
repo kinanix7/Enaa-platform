@@ -4,13 +4,9 @@ server:
 spring:
   application:
     name: api-gateway
-spring:
   cloud:
     gateway:
       routes:
-  jwt:
-    secret: aVeryLongAndSecureSecretKeyForJWTAuthentication
-    expiration: 86400000
         - id: auth-service
           uri: lb://auth-service
           predicates:
@@ -34,6 +30,9 @@ spring:
 
           filters :
            - AuthenticationFilter
+  jwt:
+    secret: aVeryLongAndSecureSecretKeyForJWTAuthentication
+    expiration: 86400000
 
 management:
   endpoints:
