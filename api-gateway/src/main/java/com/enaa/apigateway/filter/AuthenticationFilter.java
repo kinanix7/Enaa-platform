@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
-    @Value("${jwt.secret}")
+    @Value("${spring.jwt.secret}")
     private String secret;
 
     public AuthenticationFilter() {
@@ -34,7 +34,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
             }
 
             try {
-                Claims claims = Jwts.parserBuilder().setSigningKey(secret).build().parseClaimsJws(authHeader).getBody();
+                Claims claims = Jwts.parserBuilder().setSigningKey(io.jsonwebtoken.security.Keys.hmacShaKeyFor(secret.getBytes())).build().parseClaimsJws(authHeader).getBody();
                 exchange.getRequest().mutate().header("X-auth-username", claims.getSubject()).build();
             } catch (Exception e) {
                 return onError(exchange, "Invalid token", HttpStatus.UNAUTHORIZED);
